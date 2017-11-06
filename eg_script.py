@@ -28,12 +28,14 @@ z = points[:,2]
 ### Element connectivity ###
 elmts_b = cells["triangle"]
 
-### These lines are to plot the mesh using mayavi ###
+### These lines are to plot the mesh using mayavi ##
 beam_el = mlab.pipeline.scalar_scatter(x,y,z)
 delaunay = mlab.pipeline.delaunay2d(beam_el)
 delaunay.filter.offset = 999    
 edges = mlab.pipeline.extract_edges(delaunay)
 mlab.pipeline.surface(edges, opacity=0.7, line_width=3)
 
-## Changes for new branch 
+### A line to commit for new branch ###
+### Change the opacity and linewidth according to the image ###
+
 
