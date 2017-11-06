@@ -1,7 +1,6 @@
 import pygmsh as pg
 import numpy as np
 from mayavi import mlab
-from matplotlib import pyplot as plt
 
 geom1 = pg.built_in.Geometry()
 
@@ -29,13 +28,10 @@ z = points[:,2]
 ### Element connectivity ###
 elmts_b = cells["triangle"]
 
-### These lines are to plot the mesh ###
+### These lines are to plot the mesh using mayavi ###
 beam_el = mlab.pipeline.scalar_scatter(x,y,z)
 delaunay = mlab.pipeline.delaunay2d(beam_el)
 delaunay.filter.offset = 999    
 edges = mlab.pipeline.extract_edges(delaunay)
 mlab.pipeline.surface(edges, opacity=0.7, line_width=3)
 
-#A change for second commit
-# Removed shapely for some changes 
-# The dependency of shapely is not needed, we use gmsh to create geometry 
