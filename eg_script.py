@@ -1,6 +1,5 @@
 import pygmsh as pg
 import numpy as np
-from pdb import set_trace
 from mayavi import mlab
 import shapely
 from shapely.geometry import Polygon, LineString, CAP_STYLE, JOIN_STYLE
@@ -38,3 +37,5 @@ delaunay = mlab.pipeline.delaunay2d(beam_el)
 delaunay.filter.offset = 999    
 edges = mlab.pipeline.extract_edges(delaunay)
 mlab.pipeline.surface(edges, opacity=0.7, line_width=3)
+
+#A change for second commit
