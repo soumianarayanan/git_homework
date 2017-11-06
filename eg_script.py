@@ -1,7 +1,6 @@
 import pygmsh as pg
 import numpy as np
 from mayavi import mlab
-from shapely.geometry import Polygon, LineString, CAP_STYLE, JOIN_STYLE
 from matplotlib import pyplot as plt
 
 geom1 = pg.built_in.Geometry()
@@ -39,3 +38,4 @@ mlab.pipeline.surface(edges, opacity=0.7, line_width=3)
 
 #A change for second commit
 # Removed shapely for some changes 
+# The dependency of shapely is not needed, we use gmsh to create geometry 
